@@ -5,16 +5,16 @@
   
   <title>&#39;bolg&#39; | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt;          ����ʹ����        html, body {    margin: 0;    padding: 0;} #All {    width: 800px;    height: 400px;    margin: 50px auto;    position: relative;    position: relative;">
+  <meta name="description" content="#����ʹ��">
 <meta property="og:type" content="article">
 <meta property="og:title" content="&#39;bolg&#39;">
 <meta property="og:url" content="http://yoursite.com/2017/09/10/bolg/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="&amp;lt;!DOCTYPE html&amp;gt;          ����ʹ����        html, body {    margin: 0;    padding: 0;} #All {    width: 800px;    height: 400px;    margin: 50px auto;    position: relative;    position: relative;">
-<meta property="og:updated_time" content="2017-09-10T09:01:12.092Z">
+<meta property="og:description" content="#����ʹ��">
+<meta property="og:updated_time" content="2017-09-10T09:11:32.250Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&#39;bolg&#39;">
-<meta name="twitter:description" content="&amp;lt;!DOCTYPE html&amp;gt;          ����ʹ����        html, body {    margin: 0;    padding: 0;} #All {    width: 800px;    height: 400px;    margin: 50px auto;    position: relative;    position: relative;">
+<meta name="twitter:description" content="#����ʹ��">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -52,9 +52,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -85,86 +85,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>&lt;!DOCTYPE html&gt;</p>
-<p><html lang="en"></html></p>
-<p><head><br>    <meta charset="UTF-8"><br>    <title>����ʹ����</title><br>    <link rel="stylesheet" href="css/index.css"><br> <style><br>   html, body {<br>    margin: 0;<br>    padding: 0;<br>}</p>
-<p>#All {<br>    width: 800px;<br>    height: 400px;<br>    margin: 50px auto;<br>    position: relative;<br>    position: relative;<br>}</p>
-<p>#imgList {<br>    width: 800px;<br>    height: 400px;<br>    overflow: hidden;<br>}</p>
-<p>img {<br>    width: 800px;<br>    height: 400px;<br>    display: none;<br>    transition: 5s;</p>
-<p>}</p>
-<p>.select {<br>    transition: 5s;<br>    display: block;<br>}</p>
-<p>#list {<br>    position: absolute;<br>    right: 20px;<br>    bottom: 0;<br>}</p>
-<p>#list li {<br>    list-style: none;<br>    width: 20px;<br>    height: 20px;<br>    border-radius: 50px;<br>    background-color: blue;<br>    display: inline-block;<br>    cursor: pointer;</p>
-<p>}</p>
-<p>#list .bg {<br>    background-color: red;<br>    z-index: 1;<br>    transition: 2s;<br>}</p>
-<p>#prev, #next {<br>    height: 50px;<br>    border: none;<br>    /<em>background-color:rgba(0 0 0 0.5);</em>/<br>    background-color: azure;<br>    font-weight: 900;<br>    font-size: 20px;<br>    color: #777271;<br>    outline: none;<br>    border-radius: 50px;<br>}</p>
-<p>#prev{<br>    position: absolute;<br>    top: 200px;<br>    left: 10px;<br>}</p>
-<p>#next{<br>    position: absolute;<br>    top: 200px;<br>    right: 10px;<br>}<br>   </style><br></head></p>
-<p><body></body></p>
-<p><div id="All"><br>    <div id="imgList"></div><br>    <ul id="list"></ul><br>    <button id="prev">&lt;</button><br>    <button id="next">&gt;</button><br></div><br><br></p>
-<script>
-  var ary = [{img: "1.jpg"}, {img: "2.jpg"}, {img: "3.jpg"}, {img: "4.jpg"}, {img: "5.jpg"}];
-var imgList = document.getElementById("imgList");
-var imgs = imgList.getElementsByTagName("img");
-var list = document.getElementById("list");
-var oLis = list.getElementsByTagName("li");
-
-for (var i = 0; i < ary.length; i++) {
-    imgList.innerHTML += `<img src="img/${ary[i].img}">`;
-    list.innerHTML += `<li></li>`;
-}
-
-for (var i = 0; i < oLis.length; i++) {
-    oLis[0].className = "bg";
-    imgs[0].className = "select";
-    oLis[i].index = i;
-
-    function AA(n) {
-        for (var j = 0; j < oLis.length; j++) {
-            oLis[j].className = "";
-            imgs[j].className = "";
-        }
-        oLis[n].className = "bg";
-        imgs[n].className = "select";
-    }
-
-    AA(0);
-    oLis[i].onclick = AA;
-}
-
-var prev = document.getElementById("prev");
-var next = document.getElementById("next");
-
-
-var step = 0;
-for (var i = 0; i < oLis.length; i++) {
-    oLis[i].index = i;
-    oLis[i].onclick = function () {
-        AA(this.index);
-        step = this.index;
-    }
-}
-
-prev.onclick = function () {
-    step--;
-    step < 0 ? step = 4 : null;
-    AA(step);
-}
-
-function BB() {
-    step++;
-    step > 4 ? step = 0 : null;
-    AA(step);
-}
-
-next.onclick = BB;
-window.setInterval(BB, 2000);
-  </script>
+        <p>#����ʹ��</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/10/bolg/" data-id="cj7eifjmu0001yspi5w8oqtja" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/10/bolg/" data-id="cj7eiuq8t00008spie1sbwgkf" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -175,7 +101,7 @@ window.setInterval(BB, 2000);
   
   
     <a href="/2017/09/10/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Ancien</strong>
       <div class="article-nav-title">Hello World</div>
     </a>
   
@@ -208,7 +134,7 @@ window.setInterval(BB, 2000);
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
@@ -233,7 +159,7 @@ window.setInterval(BB, 2000);
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
