@@ -83,26 +83,86 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#����ʹ��</p>
-<p>##����ʹ��</p>
-<p>##����ʹ��</p>
-<p>##����ʹ��</p>
-<p>##����ʹ��</p>
-<p>##����ʹ��</p>
-<p>##����ʹ��</p>
-<p>##����ʹ��</p>
-<p>##����ʹ��</p>
-<p>##����ʹ��</p>
-<p>##����ʹ��</p>
-<p>##����ʹ��</p>
-<p>##����ʹ��</p>
-<p>##����ʹ��</p>
-<p>##����ʹ��</p>
+        <p>&lt;!DOCTYPE html&gt;</p>
+<p><html lang="en"></html></p>
+<p><head><br>    <meta charset="UTF-8"><br>    <title>����ʹ����</title><br>    <link rel="stylesheet" href="css/index.css"><br> <style><br>   html, body {<br>    margin: 0;<br>    padding: 0;<br>}</p>
+<p>#All {<br>    width: 800px;<br>    height: 400px;<br>    margin: 50px auto;<br>    position: relative;<br>    position: relative;<br>}</p>
+<p>#imgList {<br>    width: 800px;<br>    height: 400px;<br>    overflow: hidden;<br>}</p>
+<p>img {<br>    width: 800px;<br>    height: 400px;<br>    display: none;<br>    transition: 5s;</p>
+<p>}</p>
+<p>.select {<br>    transition: 5s;<br>    display: block;<br>}</p>
+<p>#list {<br>    position: absolute;<br>    right: 20px;<br>    bottom: 0;<br>}</p>
+<p>#list li {<br>    list-style: none;<br>    width: 20px;<br>    height: 20px;<br>    border-radius: 50px;<br>    background-color: blue;<br>    display: inline-block;<br>    cursor: pointer;</p>
+<p>}</p>
+<p>#list .bg {<br>    background-color: red;<br>    z-index: 1;<br>    transition: 2s;<br>}</p>
+<p>#prev, #next {<br>    height: 50px;<br>    border: none;<br>    /<em>background-color:rgba(0 0 0 0.5);</em>/<br>    background-color: azure;<br>    font-weight: 900;<br>    font-size: 20px;<br>    color: #777271;<br>    outline: none;<br>    border-radius: 50px;<br>}</p>
+<p>#prev{<br>    position: absolute;<br>    top: 200px;<br>    left: 10px;<br>}</p>
+<p>#next{<br>    position: absolute;<br>    top: 200px;<br>    right: 10px;<br>}<br>   </style><br></head></p>
+<p><body></body></p>
+<p><div id="All"><br>    <div id="imgList"></div><br>    <ul id="list"></ul><br>    <button id="prev">&lt;</button><br>    <button id="next">&gt;</button><br></div><br><br></p>
+<script>
+  var ary = [{img: "1.jpg"}, {img: "2.jpg"}, {img: "3.jpg"}, {img: "4.jpg"}, {img: "5.jpg"}];
+var imgList = document.getElementById("imgList");
+var imgs = imgList.getElementsByTagName("img");
+var list = document.getElementById("list");
+var oLis = list.getElementsByTagName("li");
+
+for (var i = 0; i < ary.length; i++) {
+    imgList.innerHTML += `<img src="img/${ary[i].img}">`;
+    list.innerHTML += `<li></li>`;
+}
+
+for (var i = 0; i < oLis.length; i++) {
+    oLis[0].className = "bg";
+    imgs[0].className = "select";
+    oLis[i].index = i;
+
+    function AA(n) {
+        for (var j = 0; j < oLis.length; j++) {
+            oLis[j].className = "";
+            imgs[j].className = "";
+        }
+        oLis[n].className = "bg";
+        imgs[n].className = "select";
+    }
+
+    AA(0);
+    oLis[i].onclick = AA;
+}
+
+var prev = document.getElementById("prev");
+var next = document.getElementById("next");
+
+
+var step = 0;
+for (var i = 0; i < oLis.length; i++) {
+    oLis[i].index = i;
+    oLis[i].onclick = function () {
+        AA(this.index);
+        step = this.index;
+    }
+}
+
+prev.onclick = function () {
+    step--;
+    step < 0 ? step = 4 : null;
+    AA(step);
+}
+
+function BB() {
+    step++;
+    step > 4 ? step = 0 : null;
+    AA(step);
+}
+
+next.onclick = BB;
+window.setInterval(BB, 2000);
+  </script>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/10/bolg/" data-id="cj7ei4usk0000fwpiwwkisrq4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/10/bolg/" data-id="cj7eifjmu0001yspi5w8oqtja" class="article-share-link">Share</a>
       
       
     </footer>
@@ -147,7 +207,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/10/hello-world/" data-id="cj7ei4usk0001fwpi6ayxl9de" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/10/hello-world/" data-id="cj7eifjmu0000yspi36oc6blv" class="article-share-link">Share</a>
       
       
     </footer>
